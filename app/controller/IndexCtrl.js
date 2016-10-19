@@ -17,7 +17,6 @@ app.controller('IndexCtrl', function($scope,$http,  $location, $window, localSto
 	$scope.userdata = {
 		username:'sdsd',
 		email:'',
-
 	}
 
 	
