@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Pagina de Inicio</title>
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+	<style>
+		body
+		{
+			padding-top: 50px;	
+		}
+
+		html, body
+		{
+			height: 100%;
+		}
+
+		.padre
+		{
+			min-height: 90%;
+			height: auto;
+			background: #F1F1F1;
+			padding-top: 10px;
+		}
+
+		.footer{
+		    position: relative;
+		    bottom: 0;
+		    width: 100%;
+		    height: 10%;
+		    background-color: #f5f5f5;
+		}
+		
+	</style>
+</head>
+<body ng-controller="IndexCtrl">
+
+<!-- inicio del nav-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">DUVG APP</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav ">
+      	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-wrench"></i></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a ui-sref="usuarios" href="#">ssUsuarios</a></li>
+            <li><a href="#">Roles</a></li>
+          </ul>
+        </li>
+ 
+        <li class="active"><a href="#">Inicio </a></li>
+        <li><a href="#">Articulos</a></li>
+        <li><a href="#">Facturas</a></li>
+        <li><a href="#">Proveedores</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administracion <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Roles</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuario <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Actualizar Datos</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Salir</a></li>
+            
+          </ul>
+        </li>
+      </ul>     
+      
+    </div>
+  </div>
+</nav>
+
+
+<!-- fin del nav-->
+
+<!-- inicio contenedor-->
+<div class="container-fluid padre">
+	<div class="well " style="background: #FFF;" >
+		<div ui-view>
+                
+        </div>
+            
+
+	</div>
+
+	<!--end well -->
+
+
+</div>
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </footer>
+<!-- fin contenedor-->
+
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<script src="assets/js/toggleBar.js"></script>
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-ui-router.min.js"></script>
+<script src="assets/js/angular-animate.min.js"></script>
+<script src="assets/js/angular-local-storage.min.js"></script>
+<script src="assets/js/angular-modal-service.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+
+<!-- script to app-->
+<script src="app/app.js"></script>
+<script src="app/controller/UserCtrl.js"></script>
+<script src="app/controller/IndexCtrl.js"></script>
+<script src="app/factory/SecurityFactory.js"></script>
+<script src="app/factory/UserFactory.js"></script>
+</body>
+</html>

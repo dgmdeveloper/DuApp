@@ -1,0 +1,31 @@
+{
+  "name": "DuApp",
+  "authors": [
+    "dgmdeveloper \"Duviel Garcia\" <duviel@ymail.com>"
+  ],
+  "description": "Front-End",
+  "main": "bower.json",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.5.8",
+    "angular-local-storage": "^0.4.0",
+    "angular-modal-service": "^0.10.1",
+    "angular-resource": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "angular-touch": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "angular": "angularjs#^1.5.8",
+    "font-awesome": "^4.6.3",
+    "bootstrap": "^3.3.7",
+    "ng-dialog": "^0.6.2",
+    "ngAnimate": "*"
+  }
+}

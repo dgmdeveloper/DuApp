@@ -1,0 +1,216 @@
+<legend style="padding-bottom: 3px;">
+		Listado de Usuarios 
+		<i class="glyphicon "></i>
+		<span class="btn btn-primary btn-sm pull-right" ng-click="showActions(3)" >Nuevo</span>
+
+	</legend>
+	
+	
+	<div class="row" ng-hide="showList">
+		<div class="col-md-12" >
+			<div class="box-body table-responsive no-padding" >
+			    <div class="table">
+
+            
+            <table class="table table-striped table-border">
+                <thead>
+                    <tr>
+                        <td><strong>#ID</strong></td>
+                        <td><strong>username</strong></td>
+                        <td><strong>email</strong></td>
+                        <td><strong>estado</strong></td>
+                        <td><strong>Acciones</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="dato in datauser">
+                    <td>{{datauser.indexOf(dato)}}</td>
+                    <td>{{dato.id}}</td>
+                    <td>{{dato.username}}</td>
+                    <td>{{dato.email}}</td>
+                    <td>activo</td>
+                    <td>                    
+                        <span class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit" title="Ver Perfil" ng-click="mostrar(datauser.indexOf(dato));"></i></span>
+                        
+                        <span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove" title="Eliminar"></i></span>
+                    </td>
+                </tr>
+                    
+                </tbody>
+            </table>    
+        </div>
+  			</div>
+		</div>
+	</div>
+	<!-- inicio formaulario actuqalizacion de usuario -->
+	<div class="row forms formEditShowHide box-showhide"  ng-hide="showEdit">  
+    	
+    	<form action="">
+
+    		<div class="col-md-2">
+    			<div class="form-group">
+	                <label for="cedula">Cedula</label>
+	                <input type="text" id="cedula" class="form-control" name="cedula"  ng-model="useractions.cedula">
+	            </div>
+    		</div>
+
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="nombre">Nombre:</label>
+	                <input type="text" id="nombre" class="form-control" name="nombre"  ng-model="useractions.nombre" >
+	            </div>
+	            
+    		</div>
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="id">Apellidos:</label>
+	                <input type="text" id="apellidos" class="form-control" name="apellidos"  ng-model="useractions.apellidos">
+	            </div>
+    		</div>
+    		<div class="col-md-2">
+    			<div class="form-group">
+	                <label for="fechanacimiento">Fecha de Nacimiento</label>
+	                
+	                <input type="datepicker" id="fechanacimiento" class="form-control datepicker" name="fechanacimiento" ng-model="useractions.fechanacimiento"  >
+	                  
+	            </div>
+    		</div>
+    		<div class="col-md-6" >
+	            <div class="form-group">
+	                <label for="id">Dirección:</label>
+	                <input type="text" id="direccion" class="form-control" name="direccion"  ng-model="useractions.direccion">
+	            </div>      
+	            
+	        </div>
+	        <div class="col-md-2">
+	        	<div class="form-group">
+	                <label for="id">Telefono</label>
+	                <input type="text" id="telefono" class="form-control" name="telefono"  ng-model="useractions.telefono">
+	            </div>
+	        </div>
+	        <div class="col-md-4">
+	        	<div class="form-group">
+	                <label for="email">Email</label>
+	                <input type="text" id="email" class="form-control" name="email"  ng-model="useractions.email">
+	            </div>
+	        </div>
+
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="username">Usuario</label>
+	                <input type="text" id="username" class="form-control" name="username"  ng-model="useractions.username">
+	            </div>
+    		</div>
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="id">Clave</label><br>  
+	                <input type="password" id="password" class="form-control" name="password"  ng-model="useractions.password">
+	            </div>
+	            
+    		</div>
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="id">Repite clave</label><br>  
+	                <input type="password" id="passwordd" class="form-control" name="passwordd"  ng-model="useractions.passwordd">
+	            </div>
+    		</div>
+    		
+    		<hr style="border:thin solid #000;">
+    		<div class="col-md-4 pull-right">
+	            <div class="pull-right">
+	            <span href="#" class="btn btn-primary" ng-click="updateUser()">Guardar Cambios</span>
+	            <span href="#" class="btn btn-danger" ng-click="showActions(1)">Cerrar</span>
+	            </div>
+	        </div>
+
+    	</form>
+	   
+	</div>
+	<!-- fin formaulario actuqalizacion de usuario -->
+
+
+	<!-- inicio de formulario newuser-->
+	<div class="row forms formEditShowHide box-showhide"  ng-hide="showNew">  
+    	
+    	<form action="">
+
+    		<div class="col-md-2">
+    			<div class="form-group">
+	                <label for="cedula">Cedula</label>
+	                <input type="text" id="cedula" class="form-control" name="cedula"  ng-model="newUserData.cedula">
+	            </div>
+    		</div>
+
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="nombre">Nombre:</label>
+	                <input type="text" id="nombre" class="form-control" name="nombre"  ng-model="newUserData.nombre" >
+	            </div>
+	            
+    		</div>
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="id">Apellidos:</label>
+	                <input type="text" id="apellidos" class="form-control" name="apellidos"  ng-model="newUserData.apellidos">
+	            </div>
+    		</div>
+    		<div class="col-md-2">
+    			<div class="form-group">
+	                <label for="fechanacimiento">Fecha de Nacimiento</label>
+	                
+	                <input type="datepicker" id="fechanacimiento" class="form-control datepicker" name="fechanacimiento" ng-model="newUserData.fechanacimiento"  >
+	                  
+	            </div>
+    		</div>
+    		<div class="col-md-6" >
+	            <div class="form-group">
+	                <label for="id">Dirección:</label>
+	                <input type="text" id="direccion" class="form-control" name="direccion"  ng-model="newUserData.direccion">
+	            </div>      
+	            
+	        </div>
+	        <div class="col-md-2">
+	        	<div class="form-group">
+	                <label for="id">Telefono</label>
+	                <input type="text" id="telefono" class="form-control" name="telefono"  ng-model="newUserData.telefono">
+	            </div>
+	        </div>
+	        <div class="col-md-4">
+	        	<div class="form-group">
+	                <label for="email">Email</label>
+	                <input type="text" id="email" class="form-control" name="email"  ng-model="newUserData.email">
+	            </div>
+	        </div>
+
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="username">Usuario</label>
+	                <input type="text" id="username" class="form-control" name="username"  ng-model="newUserData.username">
+	            </div>
+    		</div>
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="id">Clave</label><br>  
+	                <input type="password" id="password" class="form-control" name="password"  ng-model="newUserData.password">
+	            </div>
+	            
+    		</div>
+    		<div class="col-md-4">
+    			<div class="form-group">
+	                <label for="id">Repite clave</label><br>  
+	                <input type="password" id="passwordd" class="form-control" name="passwordd"  ng-model="newUserData.passwordd">
+	            </div>
+    		</div>
+    		
+    		<hr style="border:thin solid #000;">
+    		<div class="col-md-4 pull-right">
+	            <div class="pull-right">
+	            <span href="#" class="btn btn-primary" ng-click="saveNewUser()">Guardarss</span>
+	            <span href="#" class="btn btn-danger" ng-click="showActions(1)">Cerrar</span>
+	            </div>
+	        </div>
+
+    	</form>
+	   
+	</div>
+	<!-- fin de formulario newuser -->
